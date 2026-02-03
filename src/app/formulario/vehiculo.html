@@ -21,18 +21,26 @@
     <th>Marca</th>
     <th>Impuesto</th>
     <th>Código</th>
+    <th>Alerta</th>
   </tr>
 
   <tr *ngFor="let v of vehiculos"
       [style.border]="v.impuesto > 500 ? '2px solid orange' : ''">
 
-    <td>
-      {{v.placa}}
-      <span *ngIf="v.impuesto > 500">⚠️</span>
-    </td>
+    <td>{{v.placa}}</td>
     <td>{{v.propietario}}</td>
     <td>{{v.marca}}</td>
     <td>{{v.impuesto}}</td>
     <td>{{v.codigo_revision}}</td>
+
+    <td>
+      <span *ngIf="v.impuesto > 500" style="color: orange; font-weight: bold;">
+         Impuesto alto
+      </span>
+      <span *ngIf="v.impuesto <= 500">
+        Normal
+      </span>
+    </td>
+
   </tr>
 </table>
