@@ -1,0 +1,38 @@
+/* Formulario */
+
+input {
+  display: block;
+  margin: 6px 0;
+  padding: 6px;
+  width: 250px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* Tabla de Vehículos */
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+
+tr {
+  border: 1px solid #ccc;
+}
+
+tr[style*="orange"] {
+  background: #fff7e6;
+}
