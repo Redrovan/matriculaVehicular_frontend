@@ -1,0 +1,38 @@
+<h2>Registro Vehicular</h2>
+
+<!-- FORMULARIO -->
+
+<input placeholder="Placa" [(ngModel)]="vehiculo.placa">
+<input placeholder="Propietario" [(ngModel)]="vehiculo.propietario">
+<input placeholder="Marca" [(ngModel)]="vehiculo.marca">
+<input type="number" placeholder="Fabricación" [(ngModel)]="vehiculo.fabricacion">
+<input type="number" placeholder="Valor comercial" [(ngModel)]="vehiculo.valor_comercial">
+
+<button (click)="guardar()">Registrar</button>
+
+<hr>
+
+<!-- TABLA -->
+
+<table border="1" width="100%">
+  <tr>
+    <th>Placa</th>
+    <th>Propietario</th>
+    <th>Marca</th>
+    <th>Impuesto</th>
+    <th>Código</th>
+  </tr>
+
+  <tr *ngFor="let v of vehiculos"
+      [style.border]="v.impuesto > 500 ? '2px solid orange' : ''">
+
+    <td>
+      {{v.placa}}
+      <span *ngIf="v.impuesto > 500">⚠️</span>
+    </td>
+    <td>{{v.propietario}}</td>
+    <td>{{v.marca}}</td>
+    <td>{{v.impuesto}}</td>
+    <td>{{v.codigo_revision}}</td>
+  </tr>
+</table>
